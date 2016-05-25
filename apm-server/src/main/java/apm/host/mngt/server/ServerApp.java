@@ -1,5 +1,6 @@
 package apm.host.mngt.server;
 
+import apm.protocol.thrift.definition.HealthCheckingService;
 import apm.protocol.thrift.definition.HelloService;
 import com.facebook.nifty.core.NettyServerConfig;
 import com.facebook.nifty.core.ThriftServerDef;
@@ -25,16 +26,24 @@ public class ServerApp {
                 .setWorkerThreadExecutor(newCachedThreadPool())
                 .build();
 
-        ThriftServiceProcessor processor = new ThriftServiceProcessor(new ThriftCodecManager(), ImmutableList.<ThriftEventHandler>of(), new HelloService() {
-            @Override
+        ThriftServiceProcessor processor1 = new ThriftServiceProcessor(new ThriftCodecManager(), ImmutableList.<ThriftEventHandler>of(), new HelloService() {
+
             public String ping() throws TException {
                 return "pong";
             }
         });
 
+        ThriftServiceProcessor processor2 = new ThriftServiceProcessor(new ThriftCodecManager(), ImmutableList.<ThriftEventHandler>of(), new HealthCheckingService() {
+
+            public void heartBeat() throws TException {
+                System.out.println("Health checking...");
+            }
+        });
+
         ThriftServerDef thriftServerDef = ThriftServerDef.newBuilder()
                 .listen(12345)
-                .withProcessor(processor)
+                .withProcessor(processor1)
+                .withProcessor(processor2)
                 .using(newFixedThreadPool(1))
                 .build();
 

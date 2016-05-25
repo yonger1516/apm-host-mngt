@@ -1,0 +1,4 @@
+apm\protocol\thrift\definition\HealthCheckingService.class
+apm\protocol\thrift\definition\HelloService.class
+apm\protocol\thrift\definition\HelloService$Async.class
+apm\protocol\thrift\definition\HealthCheckingService$Async.class

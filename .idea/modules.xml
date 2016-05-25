@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/apm-agent/apm-agent.iml" filepath="$PROJECT_DIR$/apm-agent/apm-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apm-host-mngt.iml" filepath="$PROJECT_DIR$/apm-host-mngt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apm-server/apm-server.iml" filepath="$PROJECT_DIR$/apm-server/apm-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/protocol-thrift-definition/protocol-thrift-definition.iml" filepath="$PROJECT_DIR$/protocol-thrift-definition/protocol-thrift-definition.iml" />
+    </modules>
+  </component>
+</project>
