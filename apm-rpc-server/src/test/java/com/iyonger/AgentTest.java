@@ -1,3 +1,6 @@
+package com.iyonger;
+
+import apm.protocol.thrift.definition.AgentInfo;
 import apm.protocol.thrift.definition.HealthCheckingService;
 import apm.protocol.thrift.definition.HelloService;
 import com.facebook.nifty.client.FramedClientConnector;
@@ -29,7 +32,31 @@ public class AgentTest {
                     new FramedClientConnector(fromParts("localhost", 12345)),
                     HealthCheckingService.class).get();
 
-            service.heartBeat();
+            AgentInfo info=new AgentInfo();
+            info.setHostId("host123");
+            service.heartBeat(info);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (TException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @Test
+    public void test2(){
+        HealthCheckingService service = null;
+        try {
+            service = thriftClientManager.createClient(
+                    new FramedClientConnector(fromParts("localhost", 12345)),
+                    HealthCheckingService.class).get();
+
+            AgentInfo info=new AgentInfo();
+            info.setHostId("host456");
+            service.heartBeat(info);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {

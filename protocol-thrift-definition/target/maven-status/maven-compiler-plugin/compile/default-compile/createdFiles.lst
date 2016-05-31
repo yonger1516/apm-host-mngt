@@ -1,4 +1,11 @@
 apm\protocol\thrift\definition\HealthCheckingService.class
+apm\protocol\thrift\definition\HostStats.class
+apm\protocol\thrift\definition\ContainerMngtService$Async.class
+apm\protocol\thrift\definition\ContainerMngtService.class
 apm\protocol\thrift\definition\HelloService.class
 apm\protocol\thrift\definition\HelloService$Async.class
+apm\protocol\thrift\definition\AgentInfo.class
 apm\protocol\thrift\definition\HealthCheckingService$Async.class
+apm\protocol\thrift\definition\ProcessStat.class
+apm\protocol\thrift\definition\ConfigurationService$Async.class
+apm\protocol\thrift\definition\ConfigurationService.class

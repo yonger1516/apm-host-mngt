@@ -23,15 +23,16 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="apm-agent" />
-        <module name="apm-server" />
+        <module name="apm-rpc-server" />
         <module name="protocol-thrift-definition" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="apm-agent" target="1.5" />
+      <module name="apm-agent" target="1.8" />
       <module name="apm-host-mngt" target="1.5" />
-      <module name="apm-server" target="1.5" />
-      <module name="protocol-thrift-definition" target="1.5" />
+      <module name="apm-rpc-server" target="1.8" />
+      <module name="apm-server" target="1.8" />
+      <module name="protocol-thrift-definition" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

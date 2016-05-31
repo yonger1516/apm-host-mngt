@@ -1,5 +1,6 @@
-package apm.host.mngt.server;
+package com.iyonger.apm.rpc.server;
 
+import apm.protocol.thrift.definition.AgentInfo;
 import apm.protocol.thrift.definition.HealthCheckingService;
 import apm.protocol.thrift.definition.HelloService;
 import com.facebook.nifty.core.NettyServerConfig;
@@ -15,11 +16,11 @@ import static java.util.concurrent.Executors.newCachedThreadPool;
 import static java.util.concurrent.Executors.newFixedThreadPool;
 
 /**
- * Created by bob on 16/5/24.
+ * Created by yongfu on 5/31/2016.
  */
-public class ServerApp {
+public class RPCServer {
 
-    public static void main(String[] args) {
+    public void main(String[] args){
 
         NettyServerConfig nettyServerConfig = NettyServerConfig.newBuilder()
                 .setBossThreadExecutor(newCachedThreadPool())
@@ -35,8 +36,9 @@ public class ServerApp {
 
         ThriftServiceProcessor processor2 = new ThriftServiceProcessor(new ThriftCodecManager(), ImmutableList.<ThriftEventHandler>of(), new HealthCheckingService() {
 
-            public void heartBeat() throws TException {
+            public void heartBeat(AgentInfo info) throws TException {
                 System.out.println("Health checking...");
+                System.out.println("Received heartbeat from :"+info.getHostId());
             }
         });
 
@@ -59,5 +61,4 @@ public class ServerApp {
             }
         });
     }
-
 }

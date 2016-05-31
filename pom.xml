@@ -7,8 +7,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>protocol-thrift-definition</module>
-        <module>apm-server</module>
         <module>apm-agent</module>
+        <module>apm-rpc-server</module>
     </modules>
 
     <properties>

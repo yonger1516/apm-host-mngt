@@ -14,8 +14,12 @@ public interface HealthCheckingService
     public interface Async
     {
         @ThriftMethod(value = "heartBeat")
-        ListenableFuture<Void> heartBeat();
+        ListenableFuture<Void> heartBeat(
+            @ThriftField(value=1, name="info", requiredness=Requiredness.NONE) final AgentInfo info
+        );
     }
     @ThriftMethod(value = "heartBeat")
-    void heartBeat() throws org.apache.thrift.TException;
+    void heartBeat(
+        @ThriftField(value=1, name="info", requiredness=Requiredness.NONE) final AgentInfo info
+    ) throws org.apache.thrift.TException;
 }

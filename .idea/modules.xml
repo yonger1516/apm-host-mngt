@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/apm-agent/apm-agent.iml" filepath="$PROJECT_DIR$/apm-agent/apm-agent.iml" />
       <module fileurl="file://$PROJECT_DIR$/apm-host-mngt.iml" filepath="$PROJECT_DIR$/apm-host-mngt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/apm-server/apm-server.iml" filepath="$PROJECT_DIR$/apm-server/apm-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apm-rpc-server/apm-rpc-server.iml" filepath="$PROJECT_DIR$/apm-rpc-server/apm-rpc-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/protocol-thrift-definition/protocol-thrift-definition.iml" filepath="$PROJECT_DIR$/protocol-thrift-definition/protocol-thrift-definition.iml" />
     </modules>
   </component>
